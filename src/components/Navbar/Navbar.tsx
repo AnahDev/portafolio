@@ -3,10 +3,10 @@
 import { useState } from 'react'
 import { Moon, Sun, Menu, X } from 'lucide-react'
 import { useTheme } from '@/contexts/theme'
-import { projects, skills, contact } from '@/data/portfolio'
+// import { projects, skills, contact } from '@/data/portfolio'
 import styles from './Navbar.module.css'
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 export default function Navbar() {
     const { themeName, toggleTheme } = useTheme()
