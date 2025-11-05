@@ -1,0 +1,22 @@
+'use client'
+
+import { contact } from '@/data/portfolio'
+import styles from './Contact.module.css'
+
+export const Contact = () => {
+    if (!contact.email) return null
+
+    return (
+        <section
+            className={`section center ${styles.contact}`}
+            id="contact"
+        >
+            <h2 className="section__title">Contact</h2>
+            <a href={`mailto:${contact.email}`}>
+                <span className="btn btn--outline">
+                    Email me
+                </span>
+            </a>
+        </section>
+    )
+}
