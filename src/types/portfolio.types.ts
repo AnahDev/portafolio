@@ -10,6 +10,7 @@ export interface Social {
 }
 
 export interface About {
+  text?: string
   name?: string;
   role?: string;
   picture?: string;

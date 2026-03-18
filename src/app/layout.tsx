@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
-import { ThemeProvider } from '@/contexts/theme'
+import { ThemeProvider } from '@/context/theme'
+import { LanguageProvider } from '@/context/LanguageContext'
 import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer/Footer'
 import './globals.css'
@@ -39,14 +40,16 @@ export default function RootLayout({
         />
       </head>
       <body className={poppins.className}>
-        <ThemeProvider>
-          <div id="top">
-            <Header />
-            <main>{children}</main>
-            <ScrollTop />
-            <Footer />
-          </div>
-        </ThemeProvider>
+        <LanguageProvider>
+          <ThemeProvider>
+            <div id="top">
+              <Header />
+              <main>{children}</main>
+              <ScrollTop />
+              <Footer />
+            </div>
+          </ThemeProvider>
+        </LanguageProvider>
       </body>
     </html>
   )

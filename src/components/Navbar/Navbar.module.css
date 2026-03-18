@@ -38,3 +38,43 @@
     margin-left: 0.8em;
   }
 }
+
+/* BOTON DE IDIOMA */
+
+.nav__lang_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Forma y tamaño de "icono" */
+  width: 36px; /* Ajusta según tus otros iconos */
+  height: 36px;
+  border-radius: 9999px; /* Totalmente circular */
+  border: none;
+
+  /* Resaltado (Usa tu color primario aquí) */
+  background-color: #0d6efd; /* Un azul primario estándar, o el teal de tu tema */
+  color: white; /* Texto claro para contraste */
+
+  /* Tipografía para que parezca un icono */
+  font-weight: 700; /* Negrita */
+  font-size: 14px;
+  text-transform: uppercase; /* Asegura ES/EN */
+
+  /* Comportamiento */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px; /* Separación de los otros elementos */
+  padding: 0;
+}
+
+/* Efecto hover profesional */
+.nav__lang_button:hover {
+  filter: brightness(110%); /* Brillo sutil */
+  transform: scale(1.05); /* Crecimiento sutil */
+}
+
+/* Efecto para el tema claro (opcional, si quieres que el color cambie) */
+:global(.light) .nav__lang_button {
+  background-color: #004dc0; /* Un azul más oscuro para el tema claro si prefieres */
+}

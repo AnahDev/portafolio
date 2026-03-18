@@ -2,14 +2,15 @@
 
 import { useState } from 'react'
 import { Moon, Sun, Menu, X } from 'lucide-react'
-import { useTheme } from '@/contexts/theme'
-// import { projects, skills, contact } from '@/data/portfolio'
+import { useTheme } from '@/context/theme'
+import { useLanguage } from '@/context/LanguageContext'
 import styles from './Navbar.module.css'
 import Link from 'next/link'
 // import Image from 'next/image'
 
 export default function Navbar() {
     const { themeName, toggleTheme } = useTheme()
+    const { t, language, toggleLanguage } = useLanguage()
     const [showNavList, setShowNavList] = useState(false)
 
     const toggleNavList = () => setShowNavList(!showNavList)
@@ -22,7 +23,7 @@ export default function Navbar() {
             >
                 <li className={`${styles.nav__listItem} link link--nav`} >
                     <Link href={"/projects"}>
-                        Projects
+                        {t('projects', 'navbar')}
 
                     </Link>
 
@@ -30,15 +31,14 @@ export default function Navbar() {
 
                 <li className={`${styles.nav__listItem} link link--nav`} >
                     <Link href={"/skills"}>
-                        Skills
+                        {t('skills', 'navbar')}
 
                     </Link>
 
                 </li>
                 <li className={`${styles.nav__listItem} link link--nav`} >
                     <Link href={"/contact"}>
-                        Contact
-
+                        {t('contact', 'navbar')}
                     </Link>
 
                 </li>
@@ -55,6 +55,20 @@ export default function Navbar() {
                 {themeName === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </button>
 
+            {/* NUEVO: Botón para cambiar el Idioma */}
+
+            <button
+                type="button"
+                onClick={toggleLanguage}
+                // Aplicamos la nueva clase CSS que resalta el botón 👇
+                className={styles.nav__lang_button}
+                aria-label={`Switch to ${language === 'es' ? 'English' : 'Español'}`}
+            >
+                {language.toUpperCase()}
+            </button>
+            {/* -------------------------------------------------- */}
+
+            {/* MENU HABURGUESA */}
             <button
                 type="button"
                 onClick={toggleNavList}

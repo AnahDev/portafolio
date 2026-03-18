@@ -1,17 +1,23 @@
 'use client'
 
-import { projects } from '@/data/portfolio'
 import ProjectContainer from '../ProjectContainer/ProjectContainer'
+import { useLanguage } from '@/context/LanguageContext'
+import { getProjects } from '@/data/portfolio'
 import styles from './Projects.module.css'
+// import { projects } from '../../data/portfolio';
 
 export default function Projects() {
-    if (!projects.length) return null
+    const { t, language, toggleLanguage } = useLanguage()
+    const aboutData = getProjects(language);
+
+
+    if (!aboutData.length) return null
 
     return (
         <section id="projects" className="section projects">
-            <h2 className="section__title">Projects</h2>
+            <h2 className="section__title"> {t('projects', 'navbar')}</h2>
             <div className={styles.projects__grid}>
-                {projects.map((project, index) => (
+                {aboutData.map((project, index) => (
                     <ProjectContainer key={`${project.name}-${index}`} project={project} />
                 ))}
             </div>

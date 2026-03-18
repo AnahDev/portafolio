@@ -1,56 +1,66 @@
+'use client'
+
 import { Github, Linkedin } from 'lucide-react'
-import { about } from '@/data/portfolio'
+import { useLanguage } from '@/context/LanguageContext'
+import { getAbout } from '@/data/portfolio'
+// import { about } from '@/data/portfolio'
+
 import styles from './About.module.css'
 
 const About = () => {
-    const { name, role, description, resume, social, picture } = about
+    // const { name, role, description, resume, social, picture } = about
+
+    const { language } = useLanguage();
+    const aboutData = getAbout(language);
+
+
 
     return (
         <div className={`${styles.about} center`}>
             <div className={styles.about__header}>
-                {picture && (
+                {aboutData.picture && (
                     <img
                         src={
-                            picture.startsWith('http')
-                                ? picture
-                                : `/images/${picture}`
+                            aboutData.picture.startsWith('http')
+                                ? aboutData.picture
+                                : `/images/${aboutData.picture}`
                         }
-                        alt={name || 'Profile picture'}
+                        alt={aboutData.name || 'Profile picture'}
                         className={styles.about__picture}
                     />
                 )}
                 <div className={styles.about__intro}>
-                    {name && (
+                    {aboutData.name && (
                         <h1>
-                            Hi, I am <span className={styles.about__name}>{name}.</span>
+                            {aboutData.text} <span className={styles.about__name}>{aboutData.name}.</span>
                         </h1>
                     )}
-                    {role && <h2 className={styles.about__role}>A {role}.</h2>}
-                    <p className={styles.about__desc}>{description && description}</p>
+                    {aboutData.role && <h2 className={styles.about__role}>{aboutData.role}.</h2>}
+                    <p className={styles.about__desc}>{aboutData.description && aboutData.description}</p>
                 </div>
             </div>
             <div className={`${styles.about__contact} center`}>
-                {resume && (
-                    <a href={resume}>
+                {aboutData.resume && (
+                    <a href={aboutData.resume}>
                         <span className='btn btn--outline'>
                             Resume
                         </span>
                     </a>
                 )}
-                {social && (
+                {aboutData.social && (
                     <>
-                        {social.github && (
+                        {aboutData.social.github && (
                             <a
-                                href={social.github}
+                                href={aboutData.social.github}
                                 aria-label='github'
                                 className='link link--icon'
                             >
                                 <Github />
                             </a>
                         )}
-                        {social.linkedin && (
+                        {aboutData.social.linkedin && (
                             <a
-                                href={social.linkedin}
+                                href={aboutData.social.linkedin}
                                 aria-label='linkedin'
                                 className='link link--icon'
                             >
