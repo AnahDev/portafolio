@@ -1,6 +1,51 @@
+/* =========================================
+   ABOUT SECTION - Optimized for Side-by-Side with Centered Text
+   ========================================= */
+
+/* SECCIÓN PRINCIPAL (Contenedor de toda la sección) */
 .about {
+  display: flex;
   flex-direction: column;
+  align-items: center;
   margin-top: 3em;
+}
+
+/* CONTENEDOR DE ENCABEZADO (Imagen y Textos de introducción)
+   Layout: Imagen (Izquierda), Texto (Derecha) */
+.about__header {
+  display: flex;
+  align-items: center; /* Alineación vertical perfecta */
+  justify-content: center; /* Centra el bloque completo en la pantalla */
+  gap: 4rem; /* Separación amplia y limpia */
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  /* border: 1px solid red; */
+}
+
+/* IMAGEN DE PERFIL (Protección y Estabilidad)
+   El secreto: Protege la imagen del "aplastamiento" y saltos de CLS al traducir a español */
+.about__pictureContainer {
+  flex-shrink: 0; /* IMPRESCINDIBLE: Evita que la imagen se mueva o salte al cambiar de idioma */
+  /* border: 1px solid yellow; */
+  /* Animación 'floating' eliminada según petición */
+}
+
+.about__picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* Círculo perfecto */
+  object-fit: cover; /* Asegura que la imagen no se estire */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+}
+
+/* TEXTOS DE INTRODUCCIÓN (Contenedor)
+   Sección para h1, h2, y p */
+.about__intro {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px; /* Limita el ancho del párrafo para legibilidad */
+  align-items: flex-start; /* Centra h1, h2, y p entre sí (horizontalmente) */
+  text-align: left; /* Centra el texto del párrafo (p) */
 }
 
 .about__name {
@@ -8,50 +53,52 @@
 }
 
 .about__role {
-  margin-top: 1.2em;
+  margin-top: 1em;
 }
 
 .about__desc {
   font-size: 1rem;
-  max-width: 600px;
+  margin-top: 1.5em; /* Margen unificado y limpio */
+  line-height: 1.6; /* Mejora la legibilidad del párrafo */
 }
 
-.about__desc,
+/* BOTONES DE CONTACTO Y REDES (Contenedor) */
 .about__contact {
-  margin-top: 2.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
+/* Iconos de redes sociales globales */
 .about :global(.link--icon) {
   margin-right: 0.8em;
+  transition: transform 0.2s ease;
 }
 
+.about :global(.link--icon):hover {
+  transform: translateY(-3px); /* Pequeño salto al pasar el mouse */
+}
+
+/* Botón de currículum global */
 .about :global(.btn--outline) {
   margin-right: 1em;
 }
 
-@media (max-width: 600px) {
-  :global(.app) .about {
-    align-items: flex-start;
+/* RESPONSIVE (MÓVILES Y TABLETS)
+   Adapta el diseño a una columna en pantallas pequeñas */
+@media (max-width: 800px) {
+  .about {
     margin-top: 2em;
   }
-}
 
-.about__header {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
+  .about__header {
+    flex-direction: column; /* Apila la foto arriba del texto */
+    text-align: center;
+    gap: 2rem;
+  }
 
-.about__picture {
-  width: 180px;
-  height: 180px;
-  border-radius: 70%;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.about__intro {
-  display: flex;
-  flex-direction: column;
+  .about__intro {
+    align-items: center; /* Centra el texto en pantallas pequeñas */
+  }
 }

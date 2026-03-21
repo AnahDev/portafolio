@@ -7,7 +7,7 @@ import styles from './Projects.module.css'
 // import { projects } from '../../data/portfolio';
 
 export default function Projects() {
-    const { t, language, toggleLanguage } = useLanguage()
+    const { t, language } = useLanguage()
     const aboutData = getProjects(language);
 
 

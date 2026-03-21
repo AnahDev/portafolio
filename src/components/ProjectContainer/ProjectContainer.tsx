@@ -2,8 +2,6 @@
 
 import { Github, ExternalLink } from 'lucide-react'
 import { Project } from '@/types/portfolio.types'
-// import { useLanguage } from '@/context/LanguageContext'
-// import { getProjects } from '@/data/portfolio'
 import styles from './ProjectContainer.module.css'
 
 interface ProjectContainerProps {

@@ -31,7 +31,7 @@ export const getAbout = (lang: Language): About => {
     text: t.text,
     name: 'Ana Santamaria',
     role: t.role,
-    picture: 'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png',
+    picture: '/assets/anapic.png',
     description: t.description,
     resume: 'https://example.com',
     social: {

@@ -5,7 +5,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import styles from './Contact.module.css'
 
 export const Contact = () => {
-    const { t, language, toggleLanguage } = useLanguage()
+    const { t } = useLanguage()
 
     if (!contact.email) return null
 
