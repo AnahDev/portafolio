@@ -13,9 +13,15 @@
   --clr-bg-alt: #2a2f4c;
   --clr-fg: #bdbddd;
   --clr-fg-alt: #cdcdff;
+
+  /* --clr-bg: #8174a0;
+  --clr-bg-alt: #2a2f4c;
+  --clr-fg: #bdbddd;
+  --clr-fg-alt: #cdcdff; */
+
   --clr-primary: #90a0d9;
-  --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  --shadow:
+    rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 /* Evita flash mientras el script carga */
@@ -113,11 +119,76 @@ main {
   margin-top: 5em;
 }
 
-.section__title {
+/* .section__title {
   text-align: center;
   margin-bottom: 1em;
   text-transform: uppercase;
+} */
+
+/* ****************** */
+/* --- Estilos base del título --- */
+.section__title {
+  text-align: center;
+  margin: 0 auto 1em auto;
+  text-transform: uppercase;
+  position: relative;
+  width: max-content;
+  padding: 5px 15px;
+  z-index: 1;
+  cursor: pointer;
+  /* Transición suave para el color de texto */
+  transition: color 0.3s ease-in-out;
 }
+
+/* --- Efecto de bloque de fondo (Opción 2) --- */
+.section__title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #a5b4fc; /* Tu color de acento */
+  z-index: -1;
+  /* Transición suave para el llenado */
+  transition: height 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+/* --- ESTADOS HOVER (Donde ocurre la magia) --- */
+
+.section__title:hover::before {
+  height: 100%; /* El fondo cubre todo */
+}
+
+.section__title:hover {
+  color: #111827; /* El texto cambia de color al rellenarse */
+
+  /* --- MODIFICADO: Nueva animación de "balanceo sutil" --- */
+  /* Usamos la nueva animación 'balanceo-sutil' durante 0.5s, 2 veces. */
+  animation: balanceo-sutil 0.5s ease-in-out 2;
+}
+
+/* --- NUEVO: Definición de la animación del balanceo sutil --- */
+/* Esta animación combina translateY (arriba/abajo) y rotate para simular un balanceo amigable. */
+@keyframes balanceo-sutil {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-0.4px) rotate(-0.4deg);
+  } /* Levanta un poco y balancea a un lado */
+  50% {
+    transform: translateY(-0.6px) rotate(0deg);
+  } /* Pico de elevación central */
+  75% {
+    transform: translateY(-0.4px) rotate(0.4deg);
+  } /* Levanta un poco y balancea al otro lado */
+  100% {
+    transform: translateY(0) rotate(0deg);
+  } /* Vuelve al centro y baja */
+}
+/* *********************** */
 
 .center {
   display: flex;
@@ -153,7 +224,7 @@ main {
 
 .link--nav {
   color: var(--clr-fg);
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
   font-weight: 500;
 }
 

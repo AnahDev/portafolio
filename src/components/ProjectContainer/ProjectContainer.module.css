@@ -3,12 +3,18 @@
   margin: 0 auto;
   text-align: center;
   box-shadow: var(--shadow);
-  transition: transform 0.2s linear;
+  transition:
+    transform 0.2s linear,
+    border-color 0.2s linear; /* Añadí la transición para el borde */
   border-radius: 10px;
+
+  /* Borde blanco con un 8% de opacidad */
+  border: 1px solid rgba(255, 255, 255, 0.09);
 }
 
 .project:hover {
   transform: translateY(-7px);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .project__description {

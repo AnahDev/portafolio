@@ -7,7 +7,7 @@ export const en = {
     about: {
         text: 'Hi! I am',
         role: 'Full-Stack Web Developer',
-        description: 'I am a  web  developer aimed at providing real value. My greatest strength is my versatility to move throughout the development cycle. I firmly believe that the best software is born from teamwork and the integration of ideas. I constantly learn and adapt easily to the technical requirements of each challenge. I build end-to-end solutions, ensuring that every line of code has a clear and scalable purpose.'
+        description: 'Oriented to provide real value, close to graduating as a Computer Engineer. I have the versatility to move throughout the development cycle, understanding not only the code, but the business logic from its conception. I stand out for my ability to work in a team and integrate ideas. I am constantly learning and adapt easily to the technical requirements of each challenge. I build end-to-end solutions, ensuring that every line of code has a clear and scalable purpose.'
     },
     projects: {
 

@@ -6,8 +6,8 @@ export const es = {
     },
     about: {
         text: 'Hola! soy',
-        role: 'Desarrollador Full-Stack',
-        description: 'Desarrollador Full-Stack orientada a aportar valor real, próxima a graduarme como Ingeniera Informática. Poseo la versatilidad para moverme en todo el ciclo de desarrollo, entendiendo no solo el código, sino la lógica de negocio desde su concepción. Destaco por mi habilidad para el trabajo en equipo y la integración de ideas. Aprendo constantemente y me adapto con facilidad a los requerimientos técnicos de cada desafío. Construyo soluciones integrales, asegurando que cada línea de código tenga un propósito claro y escalable.'
+        role: 'Desarrollador web Full-Stack',
+        description: 'Orientada a aportar valor real, próxima a graduarme como Ingeniera Informática. Poseo la versatilidad para moverme en todo el ciclo de desarrollo, entendiendo no solo el código, sino la lógica de negocio desde su concepción. Destaco por mi habilidad para el trabajo en equipo y la integración de ideas. Aprendo constantemente y me adapto con facilidad a los requerimientos técnicos de cada desafío. Construyo soluciones integrales, asegurando que cada línea de código tenga un propósito claro y escalable.'
     },
     projects: {
 

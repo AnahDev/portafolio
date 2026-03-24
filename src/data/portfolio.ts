@@ -6,11 +6,11 @@ import { en } from '../languages/en'
 type Language = 'es' | 'en';
 
 export const header: Header = {
-  homepage: '',
+  homepage: '/',
   title: '<AS>',
 };
 
-// export const about: About = {
+// export const about: About = 
 //   name: 'Ana Santamaria',
 //   role: 'Full-Stack Developer',
 //   picture: 'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png',
