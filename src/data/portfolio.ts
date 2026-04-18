@@ -31,7 +31,7 @@ export const getAbout = (lang: Language): About => {
     text: t.text,
     name: 'Ana Santamaria',
     role: t.role,
-    picture: '/assets/anapic.png',
+    picture: '/assets/anapic.webp',
     description: t.description,
     resume: 'https://example.com',
     social: {
@@ -76,29 +76,29 @@ export const getProjects = (lang: Language): Project[] => {
 
   return [
     {
-      name: 'Project 1',
+      name: 'Gestion Inteligente de Activos',
       description: t.project1,
-      stack: ['SASS', 'TypeScript', 'React'],
+      stack: ['Laravel 12', 'React', 'PostgreSQL', 'Docker'],
       sourceCode: 'https://github.com',
       livePreview: 'https://github.com',
-      image: 'https://github.githubassets.com/assets/GitHub-Logo-ee398b662d42.png',
+      image: '/assets/projects/gima.webp',
     },
     {
-      name: 'Project 2',
+      name: 'Cogni AI',
       description: t.project2,
-      stack: ['Laravel', 'PostgreSQL', 'React'],
+      stack: ['Python', 'React', 'SQLite'],
       sourceCode: 'https://github.com',
       livePreview: 'https://github.com',
-      image: 'https://github.githubassets.com/assets/GitHub-Logo-ee398b662d42.png',
+      image: '/assets/projects/cogni.webp',
     },
-    {
-      name: 'Project 3',
-      description: t.project3,
-      stack: ['Python', 'FastAPI', 'Next.js'],
-      sourceCode: 'https://github.com',
-      livePreview: 'https://github.com',
-      image: 'https://github.githubassets.com/assets/GitHub-Logo-ee398b662d42.png'
-    },
+    // {
+    //   name: 'Project 3',
+    //   description: t.project3,
+    //   stack: ['Python', 'FastAPI', 'Next.js'],
+    //   sourceCode: 'https://github.com',
+    //   livePreview: 'https://github.com',
+    //   image: 'https://github.githubassets.com/assets/GitHub-Logo-ee398b662d42.png'
+    // },
   ];
 };
 

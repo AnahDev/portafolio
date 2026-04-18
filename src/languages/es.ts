@@ -11,8 +11,8 @@ export const es = {
     },
     projects: {
 
-        project1: 'Descripción de mi primer proyecto integrando frontend y backend...',
-        project2: 'Descripción de mi segundo proyecto resolviendo la lógica de negocio...',
-        project3: 'Descripción de mi tercer proyecto con arquitectura escalable...'
+        project1: 'GIMA Sistema para la gestion de mantenimientos de activos',
+        project2: 'Chatbot de asistencia academica para realizar trabajos de grados',
+        // project3: 'Descripción de mi tercer proyecto con arquitectura escalable...'
     }
 };

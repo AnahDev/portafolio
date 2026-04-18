@@ -16,7 +16,7 @@ export default function ProjectContainer({ project }: ProjectContainerProps) {
                     src={
                         project.image.startsWith('http')
                             ? project.image
-                            : `/images/${project.image}`
+                            : project.image
                     }
                     alt={`${project.name} screenshot`}
                     style={{ width: '100%', objectFit: 'cover' }}
